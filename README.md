@@ -8,6 +8,6 @@ We will use Torchao's W8A16 quantization paradigm, where weights are stored in 8
 
 This is a block of llama 3 8b architecture:
 
-The idea is to implement the RMSNorm operation + dynamic quantization in the same kernel. We will monkey patch the kernel and use torch to handle operations we do not want to implement ourselves inside other kernels (for example int8 matmul, which we will use, or dequantization after attention and swiglu blocks).
+The idea is to implement the RMSNorm operation + dynamic quantization in the same kernel. We will monkey patch the kernel and use torch to handle operations we do not want to implement ourselves (for example the usage of int8 matmul, or the dequantization phase after attention and swiglu blocks).
 
 ![alt text](<transformer llama block w8a8(1).png>)
